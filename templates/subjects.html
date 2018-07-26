@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  
+    <h1> Subjects</h1>
+    <table class="table table-striped">
+      <tr>
+        <th> ID </th>
+        <th> Title </th>
+        <th> Author </th>
+        <th> Date </th>
+        <th>  </th>
+        <th>  </th>
+      </tr>
+
+    {% for subject in subjects %}
+      <tr>
+        <td>{{subject.id}}</td>
+        <td>{{subject.title}}</td>
+        <td>{{subject.author}}</td>
+        <td>{{subject.create_date}}</td>
+          <td><a href="edit_subject/{{subject.id}}" class="btn btn-default pull-right">Edit</a></td>
+          <td>
+            <form action="{{url_for('delete_subject', id=subject.id)}}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </td>
+        </tr>
+    {% endfor %}
+
+{% endblock %}

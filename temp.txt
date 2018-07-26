@@ -1,0 +1,15 @@
+Create table subjects(
+  id int(11) auto_increment primary Key,
+  title varchar(100),
+  author varchar(100),
+  create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+select class="dropdown">
+  {% for subject in subjects[0:] %}
+    <option value="{{subject}}">{{subject.title}}  </option>
+
+  {% endfor %}
+</select>
