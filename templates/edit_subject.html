@@ -2,12 +2,18 @@
 
 {% block body %}
   <h1>Edit Subject</h1>
+<div class="jumbotron container-fluid"  >
+
   {% from "includes/_formhelpers.html" import render_field %}
   <form method="POST" action="">
     <div class="form-group">
       {{ render_field(form.title, class_="form-control") }}
     </div>
-    
+
     <p><input class="btn btn-primary" type="submit" value="Submit">
   </form>
+</div>
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+  <div class="jumbotron text-center" >
 
     <h1> Register </h1>
     {%from "includes/_formhelpers.html" import render_field %}
@@ -22,5 +23,7 @@
       </div>
       <p><input type ="submit" class="btn btn-primary" value ="Submit"></p>
     </form>
-
+  </div>
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

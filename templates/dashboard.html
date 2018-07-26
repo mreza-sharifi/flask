@@ -1,11 +1,13 @@
 {%extends 'layout.html' %}
 
 {%block body %}
+  <div class="jumbotron container-fluid"  >
   <h1> Dashboard<small> Welcome {{session.username}}</h1>
   <a class = "btn btn-success" href ="/add_article"> Add Article </a>
   <a class = "btn btn-success" href ="/add_subject"> Add Subject </a>
-  <hr>
-
+  </div>
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <table class="table table-striped">
     <tr>
       <th> ID </th>
@@ -31,8 +33,6 @@
         </td>
       </tr>
   {% endfor %}
-
-
-
   </table>
+
 {% endblock %}

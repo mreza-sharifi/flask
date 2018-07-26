@@ -328,7 +328,7 @@ def edit_subject(id):
 
         cur = mysql.connection.cursor()
         app.logger.info(title)
-        cur.execute("UPDATE subjects SET title =%s , body=%s Where id=%s",(title , body ,id) )
+        cur.execute("UPDATE subjects SET title =%s  Where id=%s",(title ,id) )
 
         mysql.connection.commit()
         cur.close()
@@ -337,7 +337,6 @@ def edit_subject(id):
         return redirect(url_for('dashboard'))
 
     return render_template('edit_subject.html' , form=form)
-
 
 
 @app.route('/delete_subject/<string:id>', methods=['POST'])
@@ -353,7 +352,9 @@ def delete_subject(id):
     return redirect(url_for('dashboard'))
 
 
-
+@app.route('/test')
+def test():
+    render_template('test.html')
 
 if __name__ == "__main__":
     app.secret_key = 'secret123'
