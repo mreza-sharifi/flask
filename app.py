@@ -4,7 +4,7 @@ from wtforms import Form , StringField , TextAreaField , PasswordField , validat
 from passlib.hash import sha256_crypt
 from functools import wraps
 app = Flask(__name__)
-
+#line remove
 
 
 # config MySQL
